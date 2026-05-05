@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stonehenge - Phase 5: Present Day</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="viewer" class="viewer-container"></div>
+    
+    <div class="info-panel">
+        <div class="phase-badge">🏛️ PHASE 5</div>
+        <h1>Present Day (2026 CE)</h1>
+        <p>UNESCO World Heritage site — fallen stones restored, conservation ongoing, millions of visitors annually.</p>
+    </div>
+    
+    <div class="nav-buttons">
+        <a href="phase4.html" class="nav-btn">← Previous</a>
+        <a href="index.html" class="nav-btn">All Phases</a>
+    </div>
+    
+    <div class="instructions">
+        <span>🖱️ Drag to rotate</span>
+        <span>📌 Scroll to zoom</span>
+    </div>
+    
+    <div id="loading" class="loading">📦 Loading 3D scene...</div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
+            }
+        }
+    </script>
+        <script type="module">
+        import { initViewer } from './js/viewer.js?v=23'; 
+        import { initAudio } from './js/audio.js?v=1';
+
+        // Load Phase 5 Model
+        initViewer('viewer', {
+            phaseIndex: 4 
+        });
+
+        // Load Phase 5 Audio
+        initAudio(4); 
+    </script>
+</body>
+</html>

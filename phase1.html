@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stonehenge - Phase 1: Origins</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="viewer" class="viewer-container"></div>
+    
+    <div class="info-panel">
+        <div class="phase-badge">🏛️ PHASE 1</div>
+        <h1>Origins (3000 BCE)</h1>
+        <p>Circular ditch and bank — wooden posts, no stones yet. The first ceremonial gathering place.</p>
+    </div>
+    
+    <div class="nav-buttons">
+        <a href="index.html" class="nav-btn">← All Phases</a>
+        <a href="phase2.html" class="nav-btn">Next: First Stones →</a>
+    </div>
+    
+    <div class="instructions">
+        <span>🖱️ Drag to rotate</span>
+        <span>📌 Scroll to zoom</span>
+    </div>
+    
+    <div id="loading" class="loading">📦 Loading 3D scene...</div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
+            }
+        }
+    </script>
+        <script type="module">
+        import { initViewer } from './js/viewer.js?v=23'; 
+        import { initAudio } from './js/audio.js?v=1';
+
+        // Load Phase 1 Model
+        initViewer('viewer', {
+            phaseIndex: 0 
+        });
+
+        // Load Phase 1 Audio
+        initAudio(0); 
+    </script>
+</body>
+</html>
