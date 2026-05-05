@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0f1a;
+    color: white;
+}
+
+/* Landing Page */
+.landing {
+    background: linear-gradient(135deg, #0a0f1a 0%, #1a1f2e 100%);
+    min-height: 100vh;
+}
+
+.landing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 24px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    letter-spacing: 4px;
+    color: #d4a017;
+    margin-bottom: 16px;
+}
+
+.hero h2 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    color: #aaa;
+    font-size: 16px;
+}
+
+.phase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.phase-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.phase-card:hover {
+    transform: translateY(-8px);
+    border-color: #d4a017;
+    background: rgba(212,160,23,0.1);
+}
+
+.phase-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.phase-number {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #d4a017;
+    margin-bottom: 8px;
+}
+
+.phase-card h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.phase-card p {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.explore-btn {
+    display: inline-block;
+    font-size: 13px;
+    color: #d4a017;
+    border-bottom: 1px solid #d4a017;
+    padding-bottom: 4px;
+}
+
+footer {
+    text-align: center;
+    color: #555;
+    font-size: 12px;
+}
+
+/* Phase Viewer Page */
+.viewer-body {
+    overflow: hidden;
+}
+
+.viewer-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.info-panel {
+    position: absolute;
+    bottom: 120px;
+    left: 24px;
+    background: rgba(10,15,26,0.9);
+    backdrop-filter: blur(12px);
+    padding: 20px 28px;
+    border-radius: 20px;
+    border-left: 4px solid #d4a017;
+    z-index: 50;
+    max-width: 380px;
+    pointer-events: none;
+}
+
+.phase-badge {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #d4a017;
+    margin-bottom: 8px;
+}
+
+.info-panel h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.info-panel p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.85);
+}
+
+.nav-buttons {
+    position: absolute;
+    bottom: 30px;
+    right: 24px;
+    z-index: 50;
+    display: flex;
+    gap: 12px;
+    pointer-events: auto;
+}
+
+.nav-btn {
+    background: rgba(20,25,40,0.9);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 12px 24px;
+    border-radius: 40px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-btn:hover {
+    background: #d4a017;
+    color: black;
+    transform: translateY(-2px);
+}
+
+.instructions {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    padding: 6px 14px;
+    border-radius: 40px;
+    font-size: 11px;
+    color: #aaa;
+    z-index: 50;
+    font-family: monospace;
+    pointer-events: none;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.85);
+    padding: 20px 32px;
+    border-radius: 50px;
+    z-index: 100;
+    color: white;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+@media (max-width: 700px) {
+    .info-panel {
+        bottom: 160px;
+        left: 16px;
+        right: 16px;
+        max-width: none;
+        padding: 14px 20px;
+    }
+    .info-panel h1 { font-size: 20px; }
+    .nav-btn { padding: 8px 16px; font-size: 12px; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 32px; }
+}
